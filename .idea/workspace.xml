@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="331a2f1d-f198-45b1-bfef-1e8b496cae99" name="Changes" comment="Added clear, on enter and city display">
-      <change afterPath="$PROJECT_DIR$/util/DisplayUtil.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/__init__.py" afterDir="false" />
+    <list default="true" id="331a2f1d-f198-45b1-bfef-1e8b496cae99" name="Changes" comment="Added DisplayUtil.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenMeteo.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenMeteo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenMeteoUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenMeteoUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,17 +34,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.OpenMeteoUI.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.OpenMeteo.executor": "Run",
+    "Python.OpenMeteoUI.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.OpenMeteo">
+}]]></component>
+  <component name="RunManager" selected="Python.OpenMeteoUI">
     <configuration name="OpenMeteo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meteo" />
       <option name="ENV_FILES" value="" />
@@ -94,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.OpenMeteo" />
         <item itemvalue="Python.OpenMeteoUI" />
+        <item itemvalue="Python.OpenMeteo" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706312095503</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added DisplayUtil.py">
+      <option name="closed" value="true" />
+      <created>1706371620923</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706371620923</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +155,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
     <MESSAGE value="Added clear, on enter and city display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added clear, on enter and city display" />
+    <MESSAGE value="Added DisplayUtil.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DisplayUtil.py" />
   </component>
 </project>
