@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="331a2f1d-f198-45b1-bfef-1e8b496cae99" name="Changes" comment="First commit">
-      <change beforePath="$PROJECT_DIR$/.idea/Meteo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Meteo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="331a2f1d-f198-45b1-bfef-1e8b496cae99" name="Changes" comment="Added clear, on enter and city display">
+      <change afterPath="$PROJECT_DIR$/util/DisplayUtil.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenMeteo.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenMeteo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenMeteoUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenMeteoUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +47,29 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.OpenMeteo">
+    <configuration name="OpenMeteo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Meteo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenMeteo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="OpenMeteoUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meteo" />
       <option name="ENV_FILES" value="" />
@@ -71,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.OpenMeteo" />
         <item itemvalue="Python.OpenMeteoUI" />
       </list>
     </recent_temporary>
@@ -99,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705778029351</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added clear, on enter and city display">
+      <option name="closed" value="true" />
+      <created>1706312095503</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706312095503</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Added clear, on enter and city display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added clear, on enter and city display" />
   </component>
 </project>

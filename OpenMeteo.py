@@ -1,10 +1,8 @@
-import calendar
 import sys
-
-from datetime import datetime
 
 from services.GeocodingService import get_location
 from services.WeatherService import get_weather
+from util.DisplayUtil import date_to_day
 
 
 def build_text(date, maximum, minimum):
@@ -13,11 +11,6 @@ def build_text(date, maximum, minimum):
     text += " " + str(minimum)
     text += "\n"
     return text
-
-
-def date_to_day(date):
-    datetime_object = datetime.strptime(date, '%Y-%m-%d')
-    return calendar.day_name[datetime_object.weekday()]
 
 
 def get_full_location_name(location):
