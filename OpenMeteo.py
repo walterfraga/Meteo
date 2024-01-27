@@ -1,8 +1,8 @@
 import sys
+from services.WeatherService import get_weather, get_full_location_name
+from util.DisplayUtil import date_to_day
 
 from services.GeocodingService import get_location
-from services.WeatherService import get_weather
-from util.DisplayUtil import date_to_day
 
 
 def build_text(date, maximum, minimum):
@@ -11,13 +11,6 @@ def build_text(date, maximum, minimum):
     text += " " + str(minimum)
     text += "\n"
     return text
-
-
-def get_full_location_name(location):
-    full_city_name = location['results'][0]['name']
-    full_city_name += ', '
-    full_city_name += location['results'][0]['country']
-    return full_city_name
 
 
 def main():

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="331a2f1d-f198-45b1-bfef-1e8b496cae99" name="Changes" comment="Added DisplayUtil.py">
+    <list default="true" id="331a2f1d-f198-45b1-bfef-1e8b496cae99" name="Changes" comment="Turned OpenMeteoUI into a class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpenMeteo.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenMeteo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpenMeteoUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpenMeteoUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/WeatherService.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/WeatherService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.OpenMeteoUI">
+  <component name="RunManager" selected="Python.OpenMeteo">
     <configuration name="OpenMeteo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Meteo" />
       <option name="ENV_FILES" value="" />
@@ -92,8 +94,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.OpenMeteoUI" />
         <item itemvalue="Python.OpenMeteo" />
+        <item itemvalue="Python.OpenMeteoUI" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706371620923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Turned OpenMeteoUI into a class">
+      <option name="closed" value="true" />
+      <created>1706376162818</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706376162818</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +166,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Added clear, on enter and city display" />
     <MESSAGE value="Added DisplayUtil.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DisplayUtil.py" />
+    <MESSAGE value="Turned OpenMeteoUI into a class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turned OpenMeteoUI into a class" />
   </component>
 </project>

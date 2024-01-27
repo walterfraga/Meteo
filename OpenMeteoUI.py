@@ -3,7 +3,7 @@ from tkinter import ttk
 
 from OpenMeteo import date_to_day
 from services.GeocodingService import get_location
-from services.WeatherService import get_weather
+from services.WeatherService import get_weather, get_full_location_name
 
 
 class OpenMeteoUI:
@@ -13,7 +13,7 @@ class OpenMeteoUI:
         for index in range(7):
             self.weather_view.insert(parent='', index='end', iid=index, text='',
                                      values=(
-                                     date_to_day(data_dates[index]), data_maximums[index], data_minimums[index]))
+                                         date_to_day(data_dates[index]), data_maximums[index], data_minimums[index]))
         self.weather_view.grid(column=0, row=2, columnspan=4)
 
     def __init__(self):
@@ -60,15 +60,6 @@ def initialize_weather_view(self):
     self.weather_view.heading("day", text="Day", anchor=CENTER)
     self.weather_view.heading("max", text="Max", anchor=CENTER)
     self.weather_view.heading("min", text="Min", anchor=CENTER)
-
-
-
-
-def get_full_location_name(location):
-    full_city_name = location['results'][0]['name']
-    full_city_name += ', '
-    full_city_name += location['results'][0]['country']
-    return full_city_name
 
 
 def submit_clicked(self):
