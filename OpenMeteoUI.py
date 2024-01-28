@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 
-from OpenMeteo import date_to_day
 from services.GeocodingService import GeocodingService
 from services.WeatherService import WeatherService
 
@@ -13,7 +12,7 @@ class OpenMeteoUI:
         for index in range(7):
             self.weather_view.insert(parent='', index='end', iid=index, text='',
                                      values=(
-                                         date_to_day(data_dates[index]), data_maximums[index], data_minimums[index]))
+                                         data_dates[index], data_maximums[index], data_minimums[index]))
         self.weather_view.grid(column=0, row=2, columnspan=4)
 
     def __init__(self):

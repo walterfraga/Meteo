@@ -1,12 +1,11 @@
 import sys
 from services.WeatherService import WeatherService
-from util.DisplayUtil import date_to_day
 
 from services.GeocodingService import GeocodingService
 
 
 def build_text(date, maximum, minimum):
-    text = date_to_day(date)
+    text = date
     text += " " + str(maximum)
     text += " " + str(minimum)
     text += "\n"
