@@ -1,8 +1,8 @@
 import sys
-from services.WeatherService import get_weather, get_full_location_name
+from services.WeatherService import WeatherService
 from util.DisplayUtil import date_to_day
 
-from services.GeocodingService import get_location
+from services.GeocodingService import GeocodingService
 
 
 def build_text(date, maximum, minimum):
@@ -18,20 +18,19 @@ def main():
         input_city = input('What city would you like to have this weeks forcast?\n')
     else:
         input_city = sys.argv[1]
-    location = get_location(input_city)
+    geocoding_service = GeocodingService()
+    location = geocoding_service.get_location(input_city)
 
-    if 'results' not in location.keys():
+    if location is None:
         print('Unknown city')
         exit(5)
     else:
-        print(get_full_location_name(location))
-    data = get_weather(str(location['results'][0]['latitude']), str(location['results'][0]['longitude']))
-    data_dates = data['daily']['time']
-    data_maximums = data['daily']['temperature_2m_max']
-    data_minimums = data['daily']['temperature_2m_min']
+        print(location.full_city_name)
+    weather_service = WeatherService()
+    weather = weather_service.get_weather(location.latitude, location.longitude)
     output = ''
     for index in range(7):
-        output += build_text(data_dates[index], data_maximums[index], data_minimums[index])
+        output += build_text(weather.dates[index], weather.maximums[index], weather.minimums[index])
     print(output)
 
 

@@ -2,8 +2,8 @@ from tkinter import *
 from tkinter import ttk
 
 from OpenMeteo import date_to_day
-from services.GeocodingService import get_location
-from services.WeatherService import get_weather, get_full_location_name
+from services.GeocodingService import GeocodingService
+from services.WeatherService import WeatherService
 
 
 class OpenMeteoUI:
@@ -30,13 +30,13 @@ class OpenMeteoUI:
 
         self.city = StringVar()
         city_entry = ttk.Entry(weather_frame, textvariable=self.city)
-        city_entry.bind("<Return>", lambda event: submit_clicked(self))
+        city_entry.bind("<Return>", lambda event: self.submit_clicked())
         city_entry.focus()
 
         submit_button = ttk.Button(weather_frame, text="Submit",
-                                   command=lambda: submit_clicked(self))
+                                   command=lambda: self.submit_clicked())
         clear_button = ttk.Button(weather_frame, text="Clear",
-                                  command=lambda: clear_clicked(self))
+                                  command=lambda: self.clear_clicked())
 
         weather_frame.grid(column=0, row=0)
         label.grid(column=0, row=0)
@@ -45,41 +45,38 @@ class OpenMeteoUI:
         clear_button.grid(column=3, row=0)
         self.full_city_name.grid(column=0, row=1, columnspan=4)
 
-        initialize_weather_view(self)
-        ws.bind('<Return>', submit_clicked(self))
+        self.initialize_weather_view()
+        ws.bind('<Return>', self.submit_clicked())
         ws.mainloop()
 
+    def clear_clicked(self):
+        self.city.set("")
+        self.full_city_name.config(text="")
+        self.weather_view.delete(*self.weather_view.get_children())
 
-def initialize_weather_view(self):
-    self.weather_view['columns'] = ('day', 'max', 'min')
-    self.weather_view.column("#0", width=0, stretch=NO)
-    self.weather_view.column("day", anchor=CENTER, width=100)
-    self.weather_view.column("max", anchor=CENTER, width=80)
-    self.weather_view.column("min", anchor=CENTER, width=80)
-    self.weather_view.heading("#0", text="", anchor=CENTER)
-    self.weather_view.heading("day", text="Day", anchor=CENTER)
-    self.weather_view.heading("max", text="Max", anchor=CENTER)
-    self.weather_view.heading("min", text="Min", anchor=CENTER)
+    def initialize_weather_view(self):
+        self.weather_view['columns'] = ('day', 'max', 'min')
+        self.weather_view.column("#0", width=0, stretch=NO)
+        self.weather_view.column("day", anchor=CENTER, width=100)
+        self.weather_view.column("max", anchor=CENTER, width=80)
+        self.weather_view.column("min", anchor=CENTER, width=80)
+        self.weather_view.heading("#0", text="", anchor=CENTER)
+        self.weather_view.heading("day", text="Day", anchor=CENTER)
+        self.weather_view.heading("max", text="Max", anchor=CENTER)
+        self.weather_view.heading("min", text="Min", anchor=CENTER)
 
-
-def submit_clicked(self):
-    if len(self.city.get()) > 0:
-        location = get_location(self.city.get())
-        if 'results' not in location.keys():
-            print("Unknown city")
-            return
-        self.full_city_name.config(text=get_full_location_name(location))
-        data = get_weather(str(location['results'][0]['latitude']), str(location['results'][0]['longitude']))
-        data_dates = data['daily']['time']
-        data_maximums = data['daily']['temperature_2m_max']
-        data_minimums = data['daily']['temperature_2m_min']
-        self.build_weather_table(data_dates, data_maximums, data_minimums)
-
-
-def clear_clicked(self):
-    self.city.set("")
-    self.full_city_name.config(text="")
-    self.weather_view.delete(*self.weather_view.get_children())
+    def submit_clicked(self):
+        if len(self.city.get()) > 0:
+            geocoding_service = GeocodingService()
+            location = geocoding_service.get_location(self.city.get())
+            if location is None:
+                self.clear_clicked()
+                self.full_city_name.config(text="Unknown city")
+                return
+            self.full_city_name.config(text=location.full_city_name)
+            weather_service = WeatherService()
+            weather = weather_service.get_weather(location.latitude, location.longitude)
+            self.build_weather_table(weather.dates, weather.maximums, weather.minimums)
 
 
 if __name__ == "__main__":
